@@ -1,3 +1,7 @@
+Notes on challenge:
+I struggled getting brandlive server to work, so I ended up just making a testServer that is included in this code.
+Struggled a bit with getting the socket listener to function in the context session.js file.  
+
 # Brandlive Code Challenge
 
 ## Description
