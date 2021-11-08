@@ -60,18 +60,19 @@ const Chat = () => {
         if (userName !== "") {
             socket.emit("join-channel", Room.Room);
         }
+        return;
     }
 
     const myRef = useRef(null)
     const scrollToBottom = () => {
         myRef.current.scrollIntoView({ behavior: "smooth" })
-        console.log('in scrollToBottom');
     }
 
-    /*useEffect(() => {
+    useEffect(() => {
         const messages = JSON.parse(getLocalStoage('brandlive-messages'));
+        joinRoom();
         setMessageList(messages);
-      }, []);*/ // stops working after few tries, not sure why...
+      }, []); // stops working after few tries, not sure why...
     useEffect(scrollToBottom, [messageList]);
     useEffect(() => {
         socket.on("send_to_clients", (message) => {
