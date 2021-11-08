@@ -1,0 +1,43 @@
+$border-radius: 6px;
+$font-size: 16px;
+$foreground: #24292e;
+$background: white;
+
+.username-form {
+    width: 100%;
+    background: none;
+}
+.user-join {
+    margin-bottom: 30px;
+    margin-top: 20px;
+    text-align:left;
+}
+.joinTitle {
+    text-align: left;
+    font-size: larger;
+}
+$background-color: #0582FF;
+
+.username-input, #username {
+    width: 100%;
+}
+
+.username-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+#username {
+    padding: 10px 8px;
+    border: 1px solid rgb(102, 102, 102);
+    border-radius: 0;
+    outline: none;
+}
+
+.username-send {
+    border-radius: 0;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 0 15px;
+}

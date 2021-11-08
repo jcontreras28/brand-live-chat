@@ -1,0 +1,33 @@
+$foreground: #24292e;
+
+.chat, .chat-messages {
+    display: flex;
+    text-align: center;
+    height: 100%;
+    width: 60%;
+    flex-flow: column;
+}
+.chat {
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-messages {
+    width: 300px;
+    height: 420px;
+    color: $foreground;
+}
+
+.message-container {
+    overflow-y: auto;
+}
+
+.chat-body .message-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.username-wrap {
+    margin-bottom: 30px;
+}

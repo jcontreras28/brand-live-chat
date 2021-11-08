@@ -1,0 +1,31 @@
+$foreground: #24292e;
+
+.messagesTitle {
+    color: white;
+    background-color: #777;
+    padding: 10px;
+}
+.message-bubble-list {
+    width: 100%;
+}
+.message-list-wrap {
+    height: 100%;
+    overflow: scroll;
+    background-color: white;
+}
+
+.message-bubble {
+    padding: 3px 2px;
+}
+
+.message-author {
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 2px 0;  
+}
+
+.message-content {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: white;
+}
