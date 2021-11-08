@@ -12,7 +12,7 @@ function sessionReducer(state, action) {
 			console.log('error!');
 			return 'error';
 		}
-		case 'MESSAGE SENT': {
+		case 'MESSAGE-SENT': {
 			console.log('message sent: ', state);
 			return { ...state }
 		}
@@ -26,15 +26,17 @@ function sessionReducer(state, action) {
 const Provider = ({ children }) => {
 	// TODO: Your code here...
 	const [state, dispatch] = useReducer(sessionReducer, {});
-	const [messageList, setMessageList] = useState([]);
-	const values = { state, dispatch }
+	//const values = { state, dispatch }
 
 	useEffect(() => {
 		console.log('in useEffect');
-		socket.on("send_to_clients", (data) => {
-			console.log('data:', data);
-			dispatch('MESSAGE SENT', data);
-		});
+		if (!socket) return;
+		return () => {
+			socket.on("send_to_clients", (data) => {
+				console.log('data:', data);
+				dispatch('MESSAGE-SENT', data);
+			});
+		}
 	}, [socket]);
 
 	return (

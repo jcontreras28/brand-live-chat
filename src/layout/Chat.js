@@ -49,8 +49,8 @@ const Chat = () => {
                 ...newMessage
             };
             await socket.emit("message", messageData);
-            await setMessageList((list) => [...list, messageData]);
-            setLocalStorage('brandlive-messages', JSON.stringify(messageList));
+            setMessageList((list) => [...list, messageData]);
+            setLocalStorage('brandlive-messages', JSON.stringify([...messageList, messageData]));
         }
     }
 
@@ -68,6 +68,10 @@ const Chat = () => {
         console.log('in scrollToBottom');
     }
 
+    useEffect(() => {
+        const messages = JSON.parse(getLocalStoage('brandlive-messages'));
+        setMessageList(messages);
+      }, []);
     useEffect(scrollToBottom, [messageList]);
     useEffect(() => {
         socket.on("send_to_clients", (message) => {
