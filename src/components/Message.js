@@ -1,6 +1,5 @@
 import './Message.scss';
 import SingleMessage from './SingleMessage';
-import { getLocalStoage } from '../lib/storage';
 
 const Message = (props) => {
     // TODO: Your code here...

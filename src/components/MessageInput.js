@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { getLocalStoage } from '../lib/storage';
 import './MessageInput.scss';
-import Room from '../data/settings';
-import { connection } from '../contexts/session';
 
 const MessageInput = (props) => {
     const { sendMessage } = props;
@@ -12,6 +10,7 @@ const MessageInput = (props) => {
         
         const myName = getLocalStoage('brandlive-myName');
         sendMessage({ name: myName, message: value })
+        setValue('');
     }
 
     const onInputChange = (e) => {
