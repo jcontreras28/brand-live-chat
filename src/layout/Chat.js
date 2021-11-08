@@ -68,10 +68,10 @@ const Chat = () => {
         console.log('in scrollToBottom');
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
         const messages = JSON.parse(getLocalStoage('brandlive-messages'));
         setMessageList(messages);
-      }, []);
+      }, []);*/ // stops working after few tries, not sure why...
     useEffect(scrollToBottom, [messageList]);
     useEffect(() => {
         socket.on("send_to_clients", (message) => {
